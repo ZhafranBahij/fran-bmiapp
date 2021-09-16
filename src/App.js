@@ -8,9 +8,10 @@ class Bmi extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      height: 0,
-      weight: 0,
+      height: "",
+      weight: "",
       bmiValue: 0,
+      textWeightness: "",
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -18,14 +19,28 @@ class Bmi extends React.Component {
   }
 
   handleChange(event) {
-    this.setState({ [event.target.name]: event.target.value });
+    let result = event.target.value;
+    if (result <= 0) {
+      alert("Please, input a positive integer number!");
+      return;
+    }
+    this.setState({ [event.target.name]: result });
   }
 
   handleSubmit(event) {
     let { height, weight, bmiValue } = this.state;
+
     bmiValue = weight / Math.pow(height / 100, 2);
     let weightness = this.rankOfWeightness(bmiValue);
-    alert(`BMI Value: ${bmiValue} \nRank: ${weightness}`);
+    this.setState({
+      textWeightness: (
+        <div class="card  bg-black text-white">
+          {" "}
+          <h4>{weightness}</h4>
+          <p>Hasil BMI: {bmiValue}</p>
+        </div>
+      ),
+    });
     event.preventDefault();
   }
 
@@ -45,39 +60,44 @@ class Bmi extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <div class="mb-3">
-          <label for="height" class="form-label">
-            Height in cm
-          </label>
-          <input
-            type="number"
-            name="height"
-            class="form-control"
-            id="height"
-            value={this.state.height}
-            onChange={this.handleChange}
-            aria-describedby="emailHelp"
-          />
+      <div class="main-card">
+        <div class="card mb-5 bg-black text-white">
+          <form onSubmit={this.handleSubmit}>
+            <div class="mb-3">
+              <label for="height" class="form-label">
+                Height in cm
+              </label>
+              <input
+                type="number"
+                name="height"
+                class="form-control"
+                id="height"
+                value={this.state.height}
+                onChange={this.handleChange}
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="weight" class="form-label">
+                Weight in kg
+              </label>
+              <input
+                type="number"
+                name="weight"
+                class="form-control"
+                id="weight"
+                value={this.state.weight}
+                onChange={this.handleChange}
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <button type="submit" class="btn btn-secondary">
+              Submit
+            </button>
+          </form>
         </div>
-        <div class="mb-3">
-          <label for="weight" class="form-label">
-            Weight in kg
-          </label>
-          <input
-            type="number"
-            name="weight"
-            class="form-control"
-            id="weight"
-            value={this.state.weight}
-            onChange={this.handleChange}
-            aria-describedby="emailHelp"
-          />
-        </div>
-        <button type="submit" class="btn btn-primary">
-          Submit
-        </button>
-      </form>
+        {this.state.textWeightness}
+      </div>
     );
   }
 }

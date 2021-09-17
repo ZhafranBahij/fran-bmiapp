@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/fran-bmiapp/static/css/main.08678a09.chunk.css",
+    "main.js": "/fran-bmiapp/static/js/main.d9783ac2.chunk.js",
+    "main.js.map": "/fran-bmiapp/static/js/main.d9783ac2.chunk.js.map",
+    "runtime-main.js": "/fran-bmiapp/static/js/runtime-main.b8f7e9ce.js",
+    "runtime-main.js.map": "/fran-bmiapp/static/js/runtime-main.b8f7e9ce.js.map",
+    "static/css/2.f2512455.chunk.css": "/fran-bmiapp/static/css/2.f2512455.chunk.css",
+    "static/js/2.921930d0.chunk.js": "/fran-bmiapp/static/js/2.921930d0.chunk.js",
+    "static/js/2.921930d0.chunk.js.map": "/fran-bmiapp/static/js/2.921930d0.chunk.js.map",
+    "static/js/3.f2541769.chunk.js": "/fran-bmiapp/static/js/3.f2541769.chunk.js",
+    "static/js/3.f2541769.chunk.js.map": "/fran-bmiapp/static/js/3.f2541769.chunk.js.map",
+    "index.html": "/fran-bmiapp/index.html",
+    "static/css/2.f2512455.chunk.css.map": "/fran-bmiapp/static/css/2.f2512455.chunk.css.map",
+    "static/css/main.08678a09.chunk.css.map": "/fran-bmiapp/static/css/main.08678a09.chunk.css.map",
+    "static/js/2.921930d0.chunk.js.LICENSE.txt": "/fran-bmiapp/static/js/2.921930d0.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b8f7e9ce.js",
+    "static/css/2.f2512455.chunk.css",
+    "static/js/2.921930d0.chunk.js",
+    "static/css/main.08678a09.chunk.css",
+    "static/js/main.d9783ac2.chunk.js"
+  ]
+}

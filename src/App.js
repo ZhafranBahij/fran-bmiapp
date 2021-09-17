@@ -1,8 +1,8 @@
 // import logo from "./logo.svg";
-import "./App.css";
 import React from "react";
 import "./";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 
 class Bmi extends React.Component {
   constructor(props) {
@@ -20,7 +20,7 @@ class Bmi extends React.Component {
 
   handleChange(event) {
     let result = event.target.value;
-    if (result <= 0) {
+    if (result < 0) {
       alert("Please, input a positive integer number!");
       return;
     }
@@ -37,7 +37,7 @@ class Bmi extends React.Component {
         <div class="card  bg-black text-white">
           {" "}
           <h4>{weightness}</h4>
-          <p>Hasil BMI: {bmiValue}</p>
+          <p>Result of BMI: {bmiValue}</p>
         </div>
       ),
     });
@@ -60,43 +60,53 @@ class Bmi extends React.Component {
 
   render() {
     return (
-      <div class="main-card">
-        <div class="card mb-5 bg-black text-white">
-          <form onSubmit={this.handleSubmit}>
-            <div class="mb-3">
-              <label for="height" class="form-label">
-                Height in cm
-              </label>
-              <input
-                type="number"
-                name="height"
-                class="form-control"
-                id="height"
-                value={this.state.height}
-                onChange={this.handleChange}
-                aria-describedby="emailHelp"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="weight" class="form-label">
-                Weight in kg
-              </label>
-              <input
-                type="number"
-                name="weight"
-                class="form-control"
-                id="weight"
-                value={this.state.weight}
-                onChange={this.handleChange}
-                aria-describedby="emailHelp"
-              />
-            </div>
-            <button type="submit" class="btn btn-secondary">
-              Submit
-            </button>
-          </form>
+      <div>
+        <h1 class="text-white mb-5">Body Mass Index</h1>
+        <div class="main-card">
+          <div class="card mb-5 bg-black text-white">
+            <form onSubmit={this.handleSubmit}>
+              <div class="mb-3">
+                <label for="height" class="form-label">
+                  Height in cm
+                </label>
+                <input
+                  required
+                  type="number"
+                  name="height"
+                  class="form-control"
+                  id="height"
+                  value={this.state.height}
+                  onChange={this.handleChange}
+                  aria-describedby="emailHelp"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="weight" class="form-label">
+                  Weight in kg
+                </label>
+                <input
+                  required
+                  type="number"
+                  name="weight"
+                  class="form-control"
+                  id="weight"
+                  value={this.state.weight}
+                  onChange={this.handleChange}
+                  aria-describedby="emailHelp"
+                />
+              </div>
+              <div class=" text-center">
+                <button
+                  type="submit"
+                  class="btn btn-secondary justify-content-center"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+          {this.state.textWeightness}
         </div>
-        {this.state.textWeightness}
       </div>
     );
   }

@@ -1,6 +1,6 @@
 body {
   height: 100vh;
-  background-color: rgb(49, 47, 47);
+  background-color: rgb(55, 55, 55);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8,5 +8,5 @@ body {
 
 .card {
   width: 300px;
-  padding: 7px 15px;
+  padding: 30px 15px;
 }
